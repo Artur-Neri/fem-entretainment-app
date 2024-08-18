@@ -15,10 +15,16 @@ body {
   font-family: var(--font-outfit);
   background-color: var(--bg1);
   color: white;
-  min-height: 100vh;
 
   @include breakpoints(large) {
     display: flex;
+  }
+}
+
+main {
+  @include breakpoints(large) {
+    flex: 1;
+    margin-top: 64px;
   }
 }
 

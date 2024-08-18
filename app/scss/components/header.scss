@@ -7,6 +7,7 @@
 
     background-color: var(--bg2);
 
+    margin-bottom: rem(24);
     padding: rem(18) rem(16);
     @include breakpoints(medium){
 
@@ -19,6 +20,7 @@
         flex-direction: column;
         
         max-width: 96px;
+        height: calc(100vh - 64px);
 
         border-radius: rem(20);
 
@@ -59,8 +61,6 @@
             }
             @include breakpoints(large){
                 flex-direction: column;
-
-                
                 gap: rem(40);
             }
         }
