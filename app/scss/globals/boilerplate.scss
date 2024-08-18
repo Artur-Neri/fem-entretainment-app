@@ -1,0 +1,31 @@
+@use '../util' as *;
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-outfit);
+  background-color: var(--bg1);
+  color: white;
+  min-height: 100vh;
+
+  @include breakpoints(large) {
+    display: flex;
+  }
+}
+
+ul, li {
+  list-style: none;
+}
+
+.flex {
+  display: flex;
+}

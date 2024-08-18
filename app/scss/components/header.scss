@@ -1,0 +1,82 @@
+@use '../util' as *;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--bg2);
+
+    padding: rem(18) rem(16);
+    @include breakpoints(medium){
+
+        border-radius: rem(10);
+
+        margin: 24px;
+        padding: rem(20) rem(24);
+    }
+    @include breakpoints(large){
+        flex-direction: column;
+        
+        max-width: 96px;
+
+        border-radius: rem(20);
+
+        margin: 32px;
+        padding: rem(33) rem(28);
+    }
+
+    &__logo{
+        @include breakpoints(medium){
+            width: 32px;
+            height: 25px;
+        }
+    }
+
+    &__nav {
+        
+        @include breakpoints(large){
+            margin: rem(75) 0;
+            flex: 1;
+        }
+
+        &-link{
+            path {
+            transition: fill .15s ease-in-out;
+            }
+            &:hover path{
+                fill: white;
+            }
+            &--active{
+                fill: white;
+            }
+        }
+
+        ul{
+            gap: rem(24);
+            @include breakpoints(medium){
+                gap: rem(32)
+            }
+            @include breakpoints(large){
+                flex-direction: column;
+
+                
+                gap: rem(40);
+            }
+        }
+    }
+
+    &__profile {
+        border: 1px solid white;
+        border-radius: 50%;
+        @include breakpoints(medium) {
+            width: 32px;
+            height: 32px;
+        }
+        @include breakpoints(large) {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+}
