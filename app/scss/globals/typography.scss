@@ -1,0 +1,11 @@
+@use '../util' as *;
+h2 {
+    font-size: rem(20);
+    font-weight: 300;
+    letter-spacing: -0.31px;
+    margin-bottom: 16px;
+    @include breakpoints(medium) {
+        font-size: rem(32);
+        letter-spacing: -.5px;
+    }
+}

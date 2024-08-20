@@ -1,0 +1,61 @@
+@use '../util' as *;
+
+.separator {
+    display: inline-block;
+    background-color: white;
+    width: 3px;
+    height: 3px;
+}
+
+.thumb__shadow {
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    height: 50%;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.trending { 
+    ul {
+        display: flex;
+    }
+    &__movie {
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+
+        &-info {
+            display: flex;
+            opacity: .75;
+            align-items: center;
+            gap: rem(8);
+        }
+
+        &-category{
+            display: flex;
+            align-items: center;
+            gap: 6px;
+
+        }
+
+        &-thumb {
+            max-width: 240px;
+        }
+        &-content{
+            z-index: 2;
+            color: white;
+            font-size: 12px;
+            font-weight: 300;
+            position: absolute;
+            padding: rem(16);
+            bottom: 0;
+        }
+        &-title {
+            opacity: 1;
+            font-weight: 500;
+            margin-top: rem(4);
+            font-size: rem(15);
+        }
+    }
+}
