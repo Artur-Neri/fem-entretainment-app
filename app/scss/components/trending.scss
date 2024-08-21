@@ -1,11 +1,6 @@
 @use '../util' as *;
 
-.separator {
-    display: inline-block;
-    background-color: white;
-    width: 3px;
-    height: 3px;
-}
+
 
 .thumb__shadow {
     z-index: 1;
@@ -18,10 +13,14 @@
 }
 
 .trending { 
+    margin-bottom: rem(24);
     ul {
         display: flex;
+        gap: rem(16);
+        overflow-x: scroll;
     }
     &__movie {
+        min-width: 240px;
         position: relative;
         border-radius: 8px;
         overflow: hidden;

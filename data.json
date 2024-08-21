@@ -15,7 +15,7 @@
     "year": 2019,
     "category": "Movie",
     "rating": "PG",
-    "isBookmarked": false,
+    "isBookmarked": true,
     "isTrending": true
   },
   {
@@ -53,7 +53,7 @@
     "year": 2019,
     "category": "TV Series",
     "rating": "E",
-    "isBookmarked": false,
+    "isBookmarked": true,
     "isTrending": true
   },
   {

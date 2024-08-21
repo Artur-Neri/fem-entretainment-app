@@ -11,6 +11,14 @@ html {
   padding: 0;
 }
 
+.separator {
+  display: inline-block;
+  background-color: white;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+}
+
 body {
   font-family: var(--font-outfit);
   background-color: var(--bg1);
@@ -22,6 +30,7 @@ body {
 }
 
 main {
+  overflow: hidden;
   @include breakpoints(large) {
     flex: 1;
     margin-top: 64px;

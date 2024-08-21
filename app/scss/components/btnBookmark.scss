@@ -1,0 +1,18 @@
+@use '../util' as *;
+
+.btnBookmark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #10141e80;
+    width: rem(32);
+    height: rem(32);
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    margin: rem(8);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
