@@ -111,7 +111,27 @@ async function generateLocalDB(){
     trending = dataBase.filter(item => item.isTrending);
     recommendations = dataBase.filter(item => item.isTrending != true);
     selectTrending(trending);
-    selectRecommended(recommendations)
+
+    const normalMovieList = recommendations.map(movie=>(
+        `
+        <li class="movie-list__movie">
+          <div class="movie-list__movie-thumb">
+            <button class="btnBookmark"><img src="/assets/icon-bookmark-empty.svg" alt=""></button>
+            <img src="${movie.thumbnail.regular.small}" alt="">
+          </div>
+          <div class="movie-list__movie-info">
+            <span class="movie-list__movie-data">2019</span>
+            <span class="separator"></span>
+            <span class="movie-list__movie-category"><img src="/assets/icon-category-movie.svg" alt="movie category icon"><span>Movie</span></span>
+            <span class="separator"></span>
+            <span class="movie-list__movie-rating">PG</span>
+          </div>
+          <h3>Below Echo</h3>
+        </li>
+        `
+    )).join('')
+    console.log(normalMovieList);
+    document.querySelector('#recommended ul').innerHTML = normalMovieList
 
     document.querySelectorAll('.btnBookmark').forEach(item => {
     item.addEventListener('click', (event)=>{
@@ -149,22 +169,3 @@ function selectTrending(trending){
 
     document.querySelector('#trending ul').innerHTML = trendingHtml
 }
-
-function  selectRecommended(movies){
-    const recommendedMovies = movies.map(movie => `<li class="movie-list__movie" data-id="${movie.title}>
-          <div class="movie-list__movie-thumb">
-            <button class="btnBookmark" data-bookmarked="${movie.isBookmarked}><img src="${movie.isBookmarked ? "/assets/icon-bookmark-full.svg" : "/assets/icon-bookmark-empty.svg"}" alt=""></button>
-            <img class="teste" src="${movie.thumbnail.regular.small}" alt="${movie.title}">
-          </div>
-          <div class="movie-list__movie-info">
-            <span class="movie-list__movie-data">${movie.year}</span>
-            <span class="separator"></span>
-            <span class="movie-list__movie-category"><img src="/assets/icon-category-movie.svg" alt="movie category icon"><span>${movie.category}</span></span>
-            <span class="separator"></span>
-            <span class="movie-list__movie-rating">${movie.rating}</span>
-          </div>
-          <h3>${movie.title}</h3>
-         </li>`).join('')
-
-        document.querySelector('#recommended ul').innerHTML = recommendedMovies
-    }
